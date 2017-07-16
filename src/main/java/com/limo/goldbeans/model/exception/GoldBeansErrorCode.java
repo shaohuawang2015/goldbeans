@@ -5,9 +5,9 @@ package com.limo.goldbeans.model.exception;
  */
 public enum GoldBeansErrorCode implements ErrorCode {
 
-    SUCCESS("000", "success"),
+    SUCCESS("SUCCESS", "success"),
 
-    SYSTEM_ERROR("001", "system error");
+    SYSTEM_ERROR("SYSTEM EEROR", "system error");
 
     private final String errorCode;
 

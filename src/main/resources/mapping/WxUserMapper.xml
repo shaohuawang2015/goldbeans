@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.limo.goldbeans.dao.user.WxUserDao">
+
+    <resultMap id="WxUserMap" type="com.limo.goldbeans.model.user.WxUserModel">
+        <id column="user_id" property="userId" jdbcType="VARCHAR"/>
+        <result column="session_id" property="sessionId" jdbcType="VARCHAR"/>
+        <result column="open_id" property="openId" jdbcType="VARCHAR"/>
+        <result column="wx_session_id" property="wxSessionId" jdbcType="VARCHAR"/>
+        <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP"/>
+        <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP"/>
+    </resultMap>
+    <!--  插入微信用户数据 -->
+    <insert id="insertWxUser" parameterType="com.limo.goldbeans.model.user.WxUserModel">
+        insert into wx_user(
+            user_id,
+            session_id,
+            open_id,
+            wx_session_id
+        )values(
+            #{userId},
+            #{sessionId},
+            #{openId},
+            #{wxSessionId}
+        )
+    </insert>
+
+    <!-- 查询openId是否注册过 -->
+    <select id="queryWxUserByOpenId" parameterType="java.lang.String" resultMap="WxUserMap">
+        SELECT
+            user_id,
+            session_id,
+            open_id,
+            wx_session_id,
+            gmt_create,
+            gmt_modified
+        FROM
+            wx_user
+        WHERE
+            open_id = #{openId}
+    </select>
+
+</mapper>

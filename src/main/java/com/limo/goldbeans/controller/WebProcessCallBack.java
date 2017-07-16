@@ -24,5 +24,5 @@ public interface WebProcessCallBack<R extends BaseResponse> {
     /**
      * 结果回填
      */
-    public void fillResponse(R reponse, ModelMap modelMap);
+    public void afterProcess(BaseResponse response);
 }

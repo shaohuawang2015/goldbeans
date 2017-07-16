@@ -1,13 +1,12 @@
-package com.limo.goldbeans.facade.request;
+package com.limo.goldbeans.facade.response;
 
 /**
- * Created by shaohua.wsh on 2017/7/8.
+ * Created by shaohua.wsh on 2017/7/16.
  */
-public class UserRegisterRequest extends BaseRequest {
+public class QueryChildrenInfoResponse extends BaseResponse {
+    private static final long serialVersionUID = 840646381115846834L;
 
-    private static final long serialVersionUID = 3027906762287663480L;
-
-    private String userId;
+    private String childrenId;
 
     private String childrenName;
 
@@ -15,16 +14,18 @@ public class UserRegisterRequest extends BaseRequest {
 
     private int age;
 
-    private String parentCode;
+    private int point;
+
+    private int vip;
 
     private String laction;
 
-    public String getUserId() {
-        return userId;
+    public String getChildrenId() {
+        return childrenId;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setChildrenId(String childrenId) {
+        this.childrenId = childrenId;
     }
 
     public String getChildrenName() {
@@ -51,12 +52,20 @@ public class UserRegisterRequest extends BaseRequest {
         this.age = age;
     }
 
-    public String getParentCode() {
-        return parentCode;
+    public int getPoint() {
+        return point;
     }
 
-    public void setParentCode(String parentCode) {
-        this.parentCode = parentCode;
+    public void setPoint(int point) {
+        this.point = point;
+    }
+
+    public int getVip() {
+        return vip;
+    }
+
+    public void setVip(int vip) {
+        this.vip = vip;
     }
 
     public String getLaction() {

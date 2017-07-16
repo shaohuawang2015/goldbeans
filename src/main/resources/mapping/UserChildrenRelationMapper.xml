@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.limo.goldbeans.dao.user.UserChildrenRelationDao">
+
+
+    <resultMap id="UserChildrenRelationMap" type="com.limo.goldbeans.model.user.UserChildrenRelationModel">
+        <id column="user_children_relation_id" property="userChildrenRelationId" jdbcType="VARCHAR"/>
+        <result column="user_id" property="userId" jdbcType="VARCHAR"/>
+        <result column="children_id" property="childrenId" jdbcType="VARCHAR"/>
+        <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP"/>
+        <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--  插入微信用户数据 -->
+    <insert id="insertUserChildrenRelation" parameterType="com.limo.goldbeans.model.user.UserChildrenRelationModel">
+        insert into user_children_relation(
+            user_children_relation_id,
+            user_id,
+            children_id
+        )values(
+            #{userChildrenRelationId},
+            #{userId},
+            #{childrenId}
+        )
+    </insert>
+
+
+
+    <!-- 查询userId 关联的children实体 -->
+    <select id="queryUserChildrenRelation" parameterType="java.lang.String" resultMap="UserChildrenRelationMap">
+        SELECT
+            user_children_relation_id,
+            user_id,
+            children_id,
+            gmt_create,
+            gmt_modified
+        FROM
+            user_children_relation
+        WHERE
+            user_id = #{userId}
+    </select>
+
+</mapper>

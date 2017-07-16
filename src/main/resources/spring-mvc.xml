@@ -11,7 +11,7 @@
                         http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
 
     <!-- 自动扫描  @Controller-->
-    <context:component-scan base-package="com.limo.goldbeans.controller"/>
+    <context:component-scan base-package="com.limo.goldbeans"/>
 
     <mvc:annotation-driven />
 
@@ -42,6 +42,7 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+
     <!-- 文件上传配置 -->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <!-- 默认编码 -->
@@ -50,5 +51,9 @@
         <property name="maxUploadSize" value="32505856"/>
         <!-- 内存中的最大值 -->
         <property name="maxInMemorySize" value="4096"/>
+    </bean>
+
+    <bean id="assertUtil" class="com.limo.goldbeans.utils.AssertUtil">
+        <property name="exceptionClassName" value="com.limo.goldbeans.model.exception.GoldBeansException"></property>
     </bean>
 </beans>
