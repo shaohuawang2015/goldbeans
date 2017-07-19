@@ -9,7 +9,9 @@ public enum IdType {
 
     CHILDREN_TABLE("001", "children table id type"),
 
-    USER_CHILDREN_RELATION_TABLE("002", "user_children_relation id type"),;
+    USER_CHILDREN_RELATION_TABLE("002", "user_children_relation id type"),
+
+    CATEGORY_TABLE("003", "category table id");
 
     private String type;
 

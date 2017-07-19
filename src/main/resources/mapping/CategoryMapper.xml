@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.limo.goldbeans.dao.category.CategoryDao">
+
+    <resultMap id="CategoryMap" type="com.limo.goldbeans.model.category.CategoryModel">
+        <id column="category_position" property="categoryPosition" jdbcType="INTEGER" />
+        <result column="category_id" property="categoryId" jdbcType="VARCHAR"/>
+        <result column="category_name" property="categoryName" jdbcType="VARCHAR"/>
+        <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP"/>
+        <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--  插入微信用户数据 -->
+    <insert id="insertCategory" parameterType="com.limo.goldbeans.model.category.CategoryModel">
+        insert into t_category(
+            category_id,
+            category_name
+        )values(
+            #{categoryId},
+            #{categoryName}
+        )
+    </insert>
+
+    <!-- 查询userId 关联的children实体 -->
+    <select id="queryCategoryList" resultMap="CategoryMap">
+        SELECT
+            category_position,
+            category_id,
+            category_name,
+            gmt_create,
+            gmt_modified
+        FROM
+            t_category
+    </select>
+
+</mapper>
