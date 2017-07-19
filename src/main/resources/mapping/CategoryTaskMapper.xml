@@ -19,6 +19,7 @@
         insert into t_category_task(
             task_id,
             category_id,
+            task_title,
             task_desc,
             task_image,
             honor_id,
@@ -27,8 +28,9 @@
         )values(
             #{taskId},
             #{categoryId},
+            #{taskTitle},
             #{taskDesc},
-            #{taskImage}
+            #{taskImage},
             #{honorId},
             #{days},
             #{point}
@@ -36,10 +38,11 @@
     </insert>
 
     <!-- 查询CategoryId 关联的Task实体 -->
-    <select id="queryCategoryList" parameterType="java.lang.String" resultMap="CategoryMap">
+    <select id="queryTasksByCategoryId" parameterType="java.lang.String" resultMap="CategoryTaskMap">
         SELECT
             task_id,
             category_id,
+            task_title,
             task_desc,
             task_image,
             honor_id,

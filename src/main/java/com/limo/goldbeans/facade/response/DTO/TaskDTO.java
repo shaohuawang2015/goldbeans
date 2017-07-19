@@ -14,6 +14,10 @@ public class TaskDTO extends BaseResponse {
 
     private String taskImage;
 
+    private String  taskTitle;
+
+    private String honorId;
+
     private int days;
 
     /** 任务积分 */
@@ -57,5 +61,21 @@ public class TaskDTO extends BaseResponse {
 
     public void setPoint(int point) {
         this.point = point;
+    }
+
+    public String getTaskTitle() {
+        return taskTitle;
+    }
+
+    public void setTaskTitle(String taskTitle) {
+        this.taskTitle = taskTitle;
+    }
+
+    public String getHonorId() {
+        return honorId;
+    }
+
+    public void setHonorId(String honorId) {
+        this.honorId = honorId;
     }
 }

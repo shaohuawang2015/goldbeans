@@ -1,13 +1,10 @@
-package com.limo.goldbeans.model.category;
-
-import com.limo.goldbeans.model.BaseModel;
+package com.limo.goldbeans.facade.request;
 
 /**
  * Created by shaohua.wsh on 2017/7/19.
  */
-public class CategoryTaskModel extends BaseModel {
-
-    private String taskId;
+public class CategoryTaskCreateRequest extends BaseRequest {
+    private static final long serialVersionUID = -1716078382119990959L;
 
     private String categoryId;
 
@@ -19,18 +16,9 @@ public class CategoryTaskModel extends BaseModel {
 
     private String honorId;
 
-    private int days;
-
     private int point;
 
-
-    public String getTaskId() {
-        return taskId;
-    }
-
-    public void setTaskId(String taskId) {
-        this.taskId = taskId;
-    }
+    private int days;
 
     public String getCategoryId() {
         return categoryId;
@@ -38,6 +26,14 @@ public class CategoryTaskModel extends BaseModel {
 
     public void setCategoryId(String categoryId) {
         this.categoryId = categoryId;
+    }
+
+    public String getTaskTitle() {
+        return taskTitle;
+    }
+
+    public void setTaskTitle(String taskTitle) {
+        this.taskTitle = taskTitle;
     }
 
     public String getTaskDesc() {
@@ -56,12 +52,12 @@ public class CategoryTaskModel extends BaseModel {
         this.taskImage = taskImage;
     }
 
-    public int getDays() {
-        return days;
+    public String getHonorId() {
+        return honorId;
     }
 
-    public void setDays(int days) {
-        this.days = days;
+    public void setHonorId(String honorId) {
+        this.honorId = honorId;
     }
 
     public int getPoint() {
@@ -72,19 +68,11 @@ public class CategoryTaskModel extends BaseModel {
         this.point = point;
     }
 
-    public String getTaskTitle() {
-        return taskTitle;
+    public int getDays() {
+        return days;
     }
 
-    public void setTaskTitle(String taskTitle) {
-        this.taskTitle = taskTitle;
-    }
-
-    public String getHonorId() {
-        return honorId;
-    }
-
-    public void setHonorId(String honorId) {
-        this.honorId = honorId;
+    public void setDays(int days) {
+        this.days = days;
     }
 }

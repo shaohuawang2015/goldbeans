@@ -11,7 +11,9 @@ public enum IdType {
 
     USER_CHILDREN_RELATION_TABLE("002", "user_children_relation id type"),
 
-    CATEGORY_TABLE("003", "category table id");
+    CATEGORY_TABLE("003", "category table id"),
+
+    CATEGORY_TASK_TABLE("004", "category task table id");
 
     private String type;
 
