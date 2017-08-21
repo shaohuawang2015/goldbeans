@@ -1,13 +1,13 @@
 package com.limo.goldbeans.facade.response.DTO;
 
-import com.limo.goldbeans.facade.response.BaseResponse;
+import com.limo.goldbeans.facade.response.BaseDTO;
 
 import java.util.List;
 
 /**
  * Created by shaohua.wsh on 2017/7/17.
  */
-public class CategoryDTO extends BaseResponse {
+public class CategoryDTO extends BaseDTO {
     private static final long serialVersionUID = -227100604522397976L;
 
     private  String categoryId;

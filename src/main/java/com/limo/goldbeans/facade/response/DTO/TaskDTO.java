@@ -1,11 +1,11 @@
 package com.limo.goldbeans.facade.response.DTO;
 
-import com.limo.goldbeans.facade.response.BaseResponse;
+import com.limo.goldbeans.facade.response.BaseDTO;
 
 /**
  * Created by shaohua.wsh on 2017/7/17.
  */
-public class TaskDTO extends BaseResponse {
+public class TaskDTO extends BaseDTO {
     private static final long serialVersionUID = 8465450598803140430L;
 
     private String taskId;
@@ -14,13 +14,15 @@ public class TaskDTO extends BaseResponse {
 
     private String taskImage;
 
-    private String  taskTitle;
+    private String taskTitle;
 
     private String honorId;
 
     private int days;
 
-    /** 任务积分 */
+    /**
+     * 任务积分
+     */
     private int point;
 
     public String getTaskId() {
