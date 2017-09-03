@@ -23,7 +23,7 @@ import javax.annotation.Resource;
  */
 
 @Service
-public class UserManageServiceImpl implements UserManageService {
+public class  UserManageServiceImpl implements UserManageService {
 
     @Resource
     private WxUserDao wxUserDao;

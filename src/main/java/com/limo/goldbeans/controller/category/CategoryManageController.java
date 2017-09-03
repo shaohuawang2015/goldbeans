@@ -54,7 +54,7 @@ public class CategoryManageController extends BaseController{
         return response;
     }
 
-    @RequestMapping(value = "categoryTask/create", method = {RequestMethod.GET, RequestMethod.POST})
+    @RequestMapping(value = "categoryTask/create.json", method = {RequestMethod.GET, RequestMethod.POST})
     @ResponseBody
     public BaseResponse createCategoryTask(@RequestBody CategoryTaskCreateRequest request){
         final BaseResponse response = new BaseResponse();
@@ -79,7 +79,7 @@ public class CategoryManageController extends BaseController{
         return response;
     }
 
-    @RequestMapping(value = "/category/query", method = {RequestMethod.POST, RequestMethod.GET})
+    @RequestMapping(value = "/category/query.json", method = {RequestMethod.POST, RequestMethod.GET})
     @ResponseBody
     public QueryCategoryResponse queryCategoryDetail(){
 

@@ -26,7 +26,7 @@ public class UserManageController extends BaseController{
     /** 日志 */
     private Logger logger = Logger.getLogger(UserManageController.class);
 
-    @RequestMapping(value = "/user/register", method = {RequestMethod.GET, RequestMethod.POST})
+    @RequestMapping(value = "/user/register.json", method = {RequestMethod.GET, RequestMethod.POST})
     @ResponseBody
     public UserRegisterResponse registerUser(@RequestBody UserRegisterRequest request){
         final UserRegisterResponse response = new UserRegisterResponse();

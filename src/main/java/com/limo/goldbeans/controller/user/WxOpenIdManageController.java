@@ -28,9 +28,9 @@ import javax.annotation.Resource;
 @Controller
 public class WxOpenIdManageController extends BaseController {
 
-    @RequestMapping(value = "/wx/query3rdSession", method = {RequestMethod.POST, RequestMethod.GET})
+    @RequestMapping(value = "/wx/queryUserOpenId.json", method = {RequestMethod.POST, RequestMethod.GET})
     @ResponseBody
-    public Wx3rdSessionResponse query3rdSession(@RequestBody Wx3rdSessionRequest request) {
+    public Wx3rdSessionResponse queryUserOpenId(@RequestBody Wx3rdSessionRequest request) {
 
         final Wx3rdSessionResponse response = new Wx3rdSessionResponse();
         WebProcessTemplate.excute( response, new WebProcessCallBack<Wx3rdSessionResponse>() {
